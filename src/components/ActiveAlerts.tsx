@@ -8,19 +8,19 @@ const ActiveAlerts = () => {
   const alerts = [
     {
       id: 1,
-      location: "Mombasa, Coast Region",
+      location: "Nairobi, Kenya",
       timeElapsed: "2 hours ago",
       status: "Active",
     },
     {
       id: 2,
-      location: "Kisumu, Nyanza Region",
+      location: "Lagos, Nigeria",
       timeElapsed: "4 hours ago",
       status: "Active",
     },
     {
       id: 3,
-      location: "Nakuru, Rift Valley Region",
+      location: "Cairo, Egypt",
       timeElapsed: "6 hours ago",
       status: "Active",
     },
