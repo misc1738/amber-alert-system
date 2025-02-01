@@ -4,6 +4,7 @@ interface FadeContentProps {
   children: React.ReactNode;
   blur?: boolean;
   duration?: number;
+  delay?: number;
   easing?: string;
   threshold?: number;
   initialOpacity?: number;
@@ -14,6 +15,7 @@ const FadeContent = ({
   children,
   blur = false,
   duration = 1000,
+  delay = 0,
   easing = 'ease-out',
   threshold = 0.1,
   initialOpacity = 0,
@@ -46,7 +48,7 @@ const FadeContent = ({
       className={className}
       style={{
         opacity: inView ? 1 : initialOpacity,
-        transition: `opacity ${duration}ms ${easing}, filter ${duration}ms ${easing}`,
+        transition: `opacity ${duration}ms ${easing} ${delay}ms, filter ${duration}ms ${easing} ${delay}ms`,
         filter: blur ? (inView ? 'blur(0px)' : 'blur(10px)') : 'none',
       }}
     >
