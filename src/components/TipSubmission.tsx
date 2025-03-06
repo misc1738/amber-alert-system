@@ -45,7 +45,7 @@ const TipSubmission = () => {
       toast({
         title: "Tip Submitted",
         description: "Thank you for your information. Authorities have been notified.",
-        variant: "success"
+        variant: "default"
       });
     }, 1500);
   };
