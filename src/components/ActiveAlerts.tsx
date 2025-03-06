@@ -2,8 +2,9 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, ChevronRight, Share2, ShieldCheck } from "lucide-react";
+import { MapPin, Clock, Share2, ShieldCheck, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ActiveAlerts = () => {
   // Mock data - in a real app, this would come from an API
@@ -57,10 +58,17 @@ const ActiveAlerts = () => {
           className="space-y-8"
         >
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">Active Alerts</h2>
-            <p className="text-muted-foreground">
-              Current missing children reports in your region
-            </p>
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight">Active Alerts</h2>
+                <p className="text-muted-foreground">
+                  Current missing children reports in your region
+                </p>
+              </div>
+              <Button asChild>
+                <Link to="/alerts">View All Alerts</Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -72,7 +80,7 @@ const ActiveAlerts = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="p-6 hover:shadow-lg smooth-transition cursor-pointer group">
+                <Card className="p-6 hover:shadow-lg smooth-transition">
                   <div className="space-y-4">
                     <div className="flex justify-between items-start">
                       <div className="flex gap-2">
@@ -105,6 +113,15 @@ const ActiveAlerts = () => {
                         <Clock className="h-4 w-4 mr-2" />
                         <span>{alert.timeElapsed}</span>
                       </div>
+                    </div>
+
+                    <div className="flex justify-end">
+                      <Button asChild variant="outline">
+                        <Link to={`/case/${alert.id}`}>
+                          View Details
+                          <ChevronRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </Card>
