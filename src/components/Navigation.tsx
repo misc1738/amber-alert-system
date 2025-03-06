@@ -18,7 +18,7 @@ const Navigation = () => {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Missing Persons Alert</span>
+            <span className="font-bold">Kenya Missing Persons Alert</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">

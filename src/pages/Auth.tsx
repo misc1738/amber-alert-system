@@ -13,7 +13,7 @@ const Auth = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              Please sign in to access administrative features and volunteer registration.
+              Please sign in to access administrative features and volunteer registration for the Kenya Missing Persons Alert system.
             </p>
             <Button className="w-full">
               <LogIn className="mr-2 h-4 w-4" />

@@ -6,15 +6,15 @@ import { Check, ChevronRight, Calendar } from "lucide-react";
 import FadeContent from "@/components/FadeContent";
 
 const SuccessStories = () => {
-  // Mock data - in a real app, this would come from an API
+  // Kenyan-specific success stories
   const stories = [
     {
       id: 1,
-      childName: "Maria N.",
+      childName: "Mary W.",
       location: "Nakuru, Kenya",
       daysToFind: 3,
       date: "March 12, 2023",
-      description: "Found safe with a relative who had taken her without permission."
+      description: "Found safe with a relative in Naivasha who had taken her without informing the parents."
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const SuccessStories = () => {
       location: "Kisumu, Kenya",
       daysToFind: 2,
       date: "April 5, 2023",
-      description: "Located at a friend's house after a miscommunication with parents."
+      description: "Located at a friend's house in Nyalenda after a miscommunication with parents."
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const SuccessStories = () => {
       location: "Mombasa, Kenya",
       daysToFind: 1,
       date: "May 20, 2023",
-      description: "Found at a local market after wandering away from home."
+      description: "Found at Kongowea market after wandering away from home."
     }
   ];
 
@@ -52,7 +52,7 @@ const SuccessStories = () => {
               Success Stories
             </h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto">
-              Children who have been safely reunited with their families, proving that our system works
+              Children who have been safely reunited with their families across Kenya
             </p>
           </div>
 

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Search, Filter } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -36,7 +37,7 @@ const SearchAlerts = () => {
                   Search Active Alerts
                 </h2>
                 <p className="text-muted-foreground">
-                  Search for missing children cases by name, location, or case number
+                  Search for missing children cases across Kenya by name, location, or case number
                 </p>
               </div>
 
@@ -87,12 +88,14 @@ const SearchAlerts = () => {
 
                     <Select value={location} onValueChange={setLocation}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Location" />
+                        <SelectValue placeholder="County" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="nairobi">Nairobi</SelectItem>
-                        <SelectItem value="lagos">Lagos</SelectItem>
-                        <SelectItem value="cairo">Cairo</SelectItem>
+                        <SelectItem value="mombasa">Mombasa</SelectItem>
+                        <SelectItem value="kisumu">Kisumu</SelectItem>
+                        <SelectItem value="nakuru">Nakuru</SelectItem>
+                        <SelectItem value="uasin-gishu">Uasin Gishu</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

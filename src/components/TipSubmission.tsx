@@ -44,7 +44,7 @@ const TipSubmission = () => {
       setIsSubmitted(true);
       toast({
         title: "Tip Submitted",
-        description: "Thank you for your information. Authorities have been notified.",
+        description: "Thank you for your information. Kenyan authorities have been notified.",
         variant: "default"
       });
     }, 1500);
@@ -62,7 +62,7 @@ const TipSubmission = () => {
                   Submit a Tip
                 </h2>
                 <p className="text-muted-foreground">
-                  If you have information about a missing child, please share it with us. All tips are kept confidential.
+                  If you have information about a missing child in Kenya, please share it with us. All tips are kept confidential.
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ const TipSubmission = () => {
                   </div>
                   <h3 className="text-xl font-medium">Tip Submitted Successfully</h3>
                   <p className="text-muted-foreground">
-                    Thank you for your information. Your tip has been forwarded to the appropriate authorities.
+                    Thank you for your information. Your tip has been forwarded to the appropriate Kenyan authorities.
                   </p>
                   <Button 
                     variant="outline" 
@@ -94,12 +94,12 @@ const TipSubmission = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <label htmlFor="location" className="block text-sm font-medium">
-                      Location of Sighting
+                      Location of Sighting in Kenya
                     </label>
                     <Input
                       id="location"
                       name="location"
-                      placeholder="e.g. Westlands area, Nairobi"
+                      placeholder="e.g. Westlands, Nairobi or Diani, Kwale County"
                       required
                       value={formData.location}
                       onChange={handleChange}
@@ -133,7 +133,7 @@ const TipSubmission = () => {
                       onChange={handleChange}
                     />
                     <p className="text-xs text-muted-foreground">
-                      We respect your privacy. This information will only be used if authorities need additional details.
+                      We respect your privacy. This information will only be used if Kenyan authorities need additional details.
                     </p>
                   </div>
                   

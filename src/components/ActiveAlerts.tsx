@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const ActiveAlerts = () => {
-  // Mock data - in a real app, this would come from an API
+  // Kenyan-specific data
   const alerts = [
     {
       id: 1,
@@ -19,7 +18,7 @@ const ActiveAlerts = () => {
     },
     {
       id: 2,
-      location: "Lagos, Nigeria",
+      location: "Mombasa, Kenya",
       timeElapsed: "4 hours ago",
       status: "Active",
       isVerified: false,
@@ -27,7 +26,7 @@ const ActiveAlerts = () => {
     },
     {
       id: 3,
-      location: "Cairo, Egypt",
+      location: "Kisumu, Kenya",
       timeElapsed: "6 hours ago",
       status: "Active",
       isVerified: true,
@@ -38,7 +37,7 @@ const ActiveAlerts = () => {
   const handleShare = async (alertId: number) => {
     try {
       await navigator.share({
-        title: 'Missing Child Alert',
+        title: 'Missing Child Alert - Kenya',
         text: `Missing child alert in ${alerts.find(a => a.id === alertId)?.location}`,
         url: window.location.href,
       });
@@ -62,7 +61,7 @@ const ActiveAlerts = () => {
               <div>
                 <h2 className="text-3xl font-bold tracking-tight">Active Alerts</h2>
                 <p className="text-muted-foreground">
-                  Current missing children reports in your region
+                  Current missing children reports across Kenya
                 </p>
               </div>
               <Button asChild>

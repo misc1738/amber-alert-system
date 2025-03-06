@@ -9,26 +9,26 @@ import { Link } from "react-router-dom";
 const CaseDetails = () => {
   const { id } = useParams();
 
-  // Mock data - in a real app, this would fetch based on the ID
+  // Kenya-specific mock data
   const caseDetails = {
     id: Number(id),
-    name: "Sarah Johnson",
+    name: "Sarah Kamau",
     age: 12,
-    location: "Nairobi, Kenya",
+    location: "Westlands, Nairobi",
     timeElapsed: "2 hours ago",
     status: "Active",
     isVerified: true,
-    description: "Last seen wearing a blue school uniform",
-    lastSeen: "Central Business District",
-    physicalDescription: "Height: 5'2\", Brown hair, Brown eyes",
-    contactInfo: "Police Hotline: 0800-999-999",
+    description: "Last seen wearing a blue school uniform near Safaricom House",
+    lastSeen: "Walking from Brookhouse School towards Sarit Centre",
+    physicalDescription: "Height: 155cm, Dark hair, Brown eyes, Medium build",
+    contactInfo: "DCI Child Protection Unit: 0800-722-203 | Westlands Police Station: 020-4443887",
   };
 
   const handleShare = async () => {
     try {
       await navigator.share({
         title: `Missing Child Alert - ${caseDetails.name}`,
-        text: `Please help find ${caseDetails.name}, age ${caseDetails.age}. Last seen in ${caseDetails.location}.`,
+        text: `Please help find ${caseDetails.name}, age ${caseDetails.age}. Last seen in ${caseDetails.location}, Kenya.`,
         url: window.location.href,
       });
     } catch (error) {

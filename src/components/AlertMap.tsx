@@ -18,15 +18,17 @@ const AlertMap = () => {
       // Mock map initialization with a placeholder
       mapContainer.style.background = "url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/36.8219,-1.2921,6,0/800x400?access_token=pk.placeholder') no-repeat center/cover";
       
-      // Add overlay for locations (in a real implementation)
+      // Add overlay for Kenya locations
       const alertLocations = [
         { lat: -1.2921, lng: 36.8219, location: "Nairobi" },
         { lat: -4.0435, lng: 39.6682, location: "Mombasa" },
-        { lat: 0.5180, lng: 35.2715, location: "Eldoret" }
+        { lat: 0.5180, lng: 35.2715, location: "Eldoret" },
+        { lat: -0.1022, lng: 34.7617, location: "Kisumu" },
+        { lat: -0.3031, lng: 36.0800, location: "Nakuru" }
       ];
       
       // This would render actual markers in a real implementation
-      console.log("Map would show these locations:", alertLocations);
+      console.log("Map showing these Kenyan locations:", alertLocations);
     };
     
     initMap();
@@ -50,11 +52,11 @@ const AlertMap = () => {
           <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-3 rounded-md shadow-md text-xs">
             <div className="flex items-center gap-2 mb-1">
               <span className="h-3 w-3 rounded-full bg-red-500"></span>
-              <span>Active Alerts (3)</span>
+              <span>Active Alerts (5)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="h-3 w-3 rounded-full bg-amber-500"></span>
-              <span>Recent Alerts (2)</span>
+              <span>Recent Alerts (3)</span>
             </div>
           </div>
         </div>

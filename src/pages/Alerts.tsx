@@ -6,35 +6,35 @@ import { MapPin, Clock, Share2, ShieldCheck, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Alerts = () => {
-  // Mock data - in a real app, this would come from an API
+  // Kenya-specific data
   const alerts = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Sarah Kamau",
       age: 12,
-      location: "Nairobi, Kenya",
+      location: "Westlands, Nairobi",
       timeElapsed: "2 hours ago",
       status: "Active",
       isVerified: true,
-      description: "Last seen wearing a blue school uniform",
+      description: "Last seen wearing a blue school uniform near Safaricom House",
     },
     {
       id: 2,
-      name: "Michael Ahmed",
+      name: "Michael Omondi",
       age: 8,
-      location: "Lagos, Nigeria",
+      location: "Nyali, Mombasa",
       timeElapsed: "4 hours ago",
       status: "Active",
       isVerified: false,
-      description: "Last seen at Central Park",
+      description: "Last seen at Nyali Beach Public Park",
     },
   ];
 
   const handleShare = async (alertId: number) => {
     try {
       await navigator.share({
-        title: 'Missing Child Alert',
-        text: `Missing child alert for case #${alertId}`,
+        title: 'Missing Child Alert - Kenya',
+        text: `Missing child alert for case #${alertId} in Kenya`,
         url: window.location.href,
       });
     } catch (error) {
@@ -47,8 +47,8 @@ const Alerts = () => {
       <div className="container max-w-6xl mx-auto">
         <div className="space-y-8">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold">Active Missing Person Alerts</h1>
-            <p className="text-muted-foreground">Current active cases that need attention</p>
+            <h1 className="text-3xl font-bold">Active Missing Person Alerts in Kenya</h1>
+            <p className="text-muted-foreground">Current active cases across Kenya that need attention</p>
           </div>
 
           <div className="grid gap-6">
