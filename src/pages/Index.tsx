@@ -9,6 +9,7 @@ import TipSubmission from "@/components/TipSubmission";
 import LatestNews from "@/components/LatestNews";
 import Statistics from "@/components/Statistics";
 import SearchAlerts from "@/components/SearchAlerts";
+import VolunteerRegistration from "@/components/VolunteerRegistration";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <ActiveAlerts />
       <Statistics />
       <SuccessStories />
+      <VolunteerRegistration />
       <LatestNews />
       <Resources />
       <TipSubmission />
