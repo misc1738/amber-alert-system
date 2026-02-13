@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Heart, Shield, Globe } from "lucide-react";
+import parentChildImg from "@/assets/parent-child-safety.jpg";
 
 const About = () => {
   const stats = [
@@ -11,13 +12,13 @@ const About = () => {
     },
     {
       icon: Shield,
-      value: "100+",
-      label: "Partner Organizations",
+      value: "47",
+      label: "Kenyan Counties Covered",
     },
     {
       icon: Globe,
-      value: "54",
-      label: "Countries Covered",
+      value: "100+",
+      label: "Partner Organizations",
     },
   ];
 
@@ -34,9 +35,24 @@ const About = () => {
           <div className="space-y-2 text-center">
             <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We are dedicated to creating a safer Africa for our children through
+              We are dedicated to creating a safer Kenya for our children through
               rapid response and community engagement
             </p>
+          </div>
+
+          {/* Featured image */}
+          <div className="relative rounded-xl overflow-hidden max-w-3xl mx-auto shadow-lg">
+            <img
+              src={parentChildImg}
+              alt="A Kenyan mother walking her children to school, holding hands on a tree-lined path — showcasing everyday parental care and child safety"
+              className="w-full h-72 object-cover"
+              loading="lazy"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p className="text-white text-sm italic">
+                A parent ensuring safe passage to school — child safety begins at home and in our communities
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
