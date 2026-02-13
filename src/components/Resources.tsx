@@ -1,28 +1,29 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Shield, BookOpen, Phone, Users } from "lucide-react";
+import safetyWorkshopImg from "@/assets/safety-workshop.jpg";
 
 const Resources = () => {
   const resources = [
     {
       icon: Shield,
       title: "Safety Guidelines",
-      description: "Essential tips to keep children safe and prevent abductions",
+      description: "Essential tips to keep children safe and prevent abductions across Kenya",
     },
     {
       icon: BookOpen,
       title: "Educational Resources",
-      description: "Materials to educate communities about child safety",
+      description: "Materials to educate Kenyan communities about child safety",
     },
     {
       icon: Phone,
       title: "Emergency Contacts",
-      description: "Important numbers and contacts for immediate assistance",
+      description: "Kenya Police 999 | DCI Hotline 0800-722-203 | Childline Kenya 116",
     },
     {
       icon: Users,
       title: "Support Groups",
-      description: "Connect with support groups and counseling services",
+      description: "Connect with Kenyan support groups and counseling services",
     },
   ];
 
@@ -40,8 +41,23 @@ const Resources = () => {
             <h2 className="text-3xl font-bold tracking-tight">Resources</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Access vital information and support services to help protect children
-              and respond to emergencies
+              and respond to emergencies in Kenya
             </p>
+          </div>
+
+          {/* Featured image */}
+          <div className="relative rounded-xl overflow-hidden max-w-2xl mx-auto shadow-lg">
+            <img
+              src={safetyWorkshopImg}
+              alt="Community members participating in a child safety workshop in Kenya, learning how to protect children and respond to emergencies"
+              className="w-full h-56 object-cover"
+              loading="lazy"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p className="text-white text-sm italic">
+                Community members learning child safety practices at a local workshop in Kenya
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

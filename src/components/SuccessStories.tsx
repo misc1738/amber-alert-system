@@ -1,12 +1,11 @@
-
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, ChevronRight, Calendar } from "lucide-react";
 import FadeContent from "@/components/FadeContent";
+import familyReunionImg from "@/assets/family-reunion.jpg";
 
 const SuccessStories = () => {
-  // Kenyan-specific success stories
   const stories = [
     {
       id: 1,
@@ -35,7 +34,7 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-white to-green-50">
+    <section className="py-16 px-4 bg-gradient-to-b from-background to-green-50">
       <div className="container max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,6 +54,23 @@ const SuccessStories = () => {
               Children who have been safely reunited with their families across Kenya
             </p>
           </div>
+
+          {/* Featured reunion image */}
+          <FadeContent duration={600}>
+            <div className="relative rounded-xl overflow-hidden max-w-2xl mx-auto shadow-lg">
+              <img
+                src={familyReunionImg}
+                alt="A Kenyan mother joyfully embracing her child after being reunited, showcasing the power of community-driven Amber Alerts"
+                className="w-full h-64 object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white text-sm italic">
+                  A joyful family reunion — community alerts help bring children home safely
+                </p>
+              </div>
+            </div>
+          </FadeContent>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stories.map((story, index) => (
