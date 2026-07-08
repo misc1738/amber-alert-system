@@ -1,57 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 346 100% 40%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 346 100% 40%;
-    --radius: 0.75rem;
+    /* Urgent & Bold — Amber Alert Kenya */
+    --midnight: 227 61% 10%;         /* #0A0E27 deep navy */
+    --surface: 228 40% 14%;
+
+    --background: 227 61% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 228 42% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 228 42% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 74% 51%;             /* #DC2626 critical red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 228 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 228 25% 18%;
+    --muted-foreground: 228 15% 68%;
+
+    --accent: 38 92% 50%;             /* #F59E0B amber */
+    --accent-foreground: 227 61% 10%;
+
+    --destructive: 0 74% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --critical: 0 74% 51%;
+    --critical-foreground: 0 0% 100%;
+    --critical-hover: 0 74% 44%;
+
+    --alert: 38 92% 50%;
+    --alert-foreground: 227 61% 10%;
+
+    --border: 228 30% 22%;
+    --input: 228 30% 22%;
+    --ring: 0 74% 51%;
+
+    --radius: 0.5rem;
   }
- 
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, hsl(var(--critical)/0.10), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, hsl(var(--alert)/0.08), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Inter Variable', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono, code, kbd {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
   }
 
   .glass-card {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-lg;
+    @apply bg-card/70 backdrop-blur-xl border border-border/60 shadow-2xl;
   }
 
   .smooth-transition {
     @apply transition-all duration-300 ease-in-out;
   }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  ::selection { background: hsl(var(--critical) / 0.6); color: white; }
 }
 
 .hero-pattern {
-  background-color: #ffffff;
-  background-image: radial-gradient(#f1f1f1 0.5px, transparent 0.5px), radial-gradient(#f1f1f1 0.5px, #ffffff 0.5px);
-  background-size: 20px 20px;
-  background-position: 0 0,10px 10px;
+  background-color: hsl(var(--background));
+  background-image:
+    linear-gradient(hsl(var(--border)/0.4) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border)/0.4) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
 }
 
 /* Hide the "Made with Lovable" badge without affecting layout */

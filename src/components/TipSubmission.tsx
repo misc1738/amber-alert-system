@@ -67,9 +67,9 @@ const TipSubmission = () => {
               </div>
 
               {isSubmitted ? (
-                <div className="bg-green-50 p-6 rounded-lg text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto">
-                    <Check className="h-8 w-8 text-green-600" />
+                <div className="bg-emerald-500/10 border border-emerald-500/30 p-6 rounded-lg text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto">
+                    <Check className="h-8 w-8 text-emerald-400" />
                   </div>
                   <h3 className="text-xl font-medium">Tip Submitted Successfully</h3>
                   <p className="text-muted-foreground">
