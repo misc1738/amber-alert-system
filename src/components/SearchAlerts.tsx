@@ -26,7 +26,7 @@ const SearchAlerts = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-white to-secondary/20">
+    <section className="py-16 px-4 bg-gradient-to-b from-background to-secondary/30">
       <div className="container max-w-6xl">
         <FadeContent>
           <Card className="p-8">

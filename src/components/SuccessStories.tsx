@@ -34,7 +34,7 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-background to-green-50">
+    <section className="py-16 px-4 bg-gradient-to-b from-background to-secondary/30">
       <div className="container max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
