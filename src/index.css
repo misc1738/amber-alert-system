@@ -53,3 +53,15 @@
   background-size: 20px 20px;
   background-position: 0 0,10px 10px;
 }
+
+/* Hide the "Made with Lovable" badge without affecting layout */
+#lovable-badge,
+a[href*="lovable.dev"][target="_blank"],
+a[href*="lovable.app"][aria-label*="Lovable" i],
+[data-lovable-badge],
+[class*="lovable-badge" i] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
