@@ -11,6 +11,7 @@ import CaseDetails from "./pages/CaseDetails";
 import SubmitTip from "./pages/SubmitTip";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import { AuthProvider } from "./hooks/useAuth";
 
 const queryClient = new QueryClient();
 
@@ -20,17 +21,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col">
-          <Navigation />
-          <Routes>
+        <AuthProvider>
+          <div className="min-h-screen flex flex-col">
+            <Navigation />
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/case/:id" element={<CaseDetails />} />
             <Route path="/submit-tip" element={<SubmitTip />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+            </Routes>
+          </div>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
