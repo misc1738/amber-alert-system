@@ -1,11 +1,21 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Home, List, PlusCircle, UserCircle, Radio } from "lucide-react";
+import { Home, List, PlusCircle, UserCircle, Radio, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const location = useLocation();
+  const { user, roles, signOut } = useAuth();
 
   const links = [
     { to: "/", label: "Home", icon: Home },
@@ -65,9 +75,29 @@ const Navigation = () => {
         </ul>
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
-            <Link to="/auth"><UserCircle className="w-4 h-4 mr-2" />Sign In</Link>
-          </Button>
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="hidden sm:inline-flex gap-2">
+                  <UserCircle className="w-4 h-4" />
+                  <span className="max-w-[120px] truncate">{user.email}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuLabel className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  {roles.length ? roles.join(" · ") : "Signed in"}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => signOut()} className="cursor-pointer">
+                  <LogOut className="w-4 h-4 mr-2" /> Sign out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
+              <Link to="/auth"><UserCircle className="w-4 h-4 mr-2" />Sign In</Link>
+            </Button>
+          )}
           <Button asChild size="sm" className="bg-critical hover:bg-critical-hover text-critical-foreground shadow-lg shadow-critical/30">
             <Link to="/submit-tip">Report Now</Link>
           </Button>
